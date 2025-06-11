@@ -1,0 +1,113 @@
+/* 🌍 Global */
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  color: white;
+  text-align: center;
+  background-color: #000;
+}
+
+/* ℹ️ Sections d'information */
+.info-section {
+  position: absolute;
+  font-size: 22px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.7s ease-in-out;
+}
+
+#info1 {
+  top: 10%;
+  left: 20%;
+}
+#info2 {
+  top: 30%;
+  right: 20%;
+}
+#info3 {
+  bottom: 30%;
+  left: 20%;
+}
+#info4 {
+  bottom: 10%;
+  right: 20%;
+}
+
+.hidden {
+  display: none;
+}
+
+/* 🔘 Bouton de changement de planète */
+#changePlanet {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  padding: 10px 15px;
+  font-size: 18px;
+  background: #444;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* ✅ Conteneur des boutons */
+#buttonsContainer {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+}
+
+/* 📱 Responsive pour tablette */
+@media screen and (max-width: 1024px) {
+  #buttonsContainer {
+    right: 10px; /* Ajustement sur tablette */
+  }
+}
+
+/* 📲 Responsive pour mobile */
+@media screen and (max-width: 600px) {
+  #buttonsContainer {
+    top: auto;
+    bottom: 10px; /* Boutons en bas de l’écran */
+    right: 50%;
+    transform: translateX(50%);
+    flex-direction: row; /* Alignement horizontal */
+  }
+
+  #buttonsContainer button {
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+}
+
+canvas {
+  position: absolute; /* Fixe le canvas */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover; /* Évite les déformations */
+}
+
+@media screen and (max-width: 600px) {
+  #buttonsContainer {
+    bottom: 5px; /* Rapproche les boutons du bord */
+    right: 50%;
+    transform: translateX(50%);
+    flex-direction: row;
+  }
+
+  #buttonsContainer button {
+    font-size: 12px; /* Réduction de la taille du texte */
+    padding: 5px 8px;
+    margin: 2px; /* Évite le débordement */
+  }
+}
